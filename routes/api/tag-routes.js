@@ -6,7 +6,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all tags
   Tag.findAll({
-    // include:[Product]
+    include:[Product]
   }).then(tag =>{
     if(tag.length===0){
       return res.status(404).json({msg:'no tags in the database'})
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 //TODO:add argument to include the associated products
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
-  Tag.findByPk(req.params.id).then(tag=>{
+  Tag.findByPk(req.params.id,{include:[Product]}).then(tag=>{
     if(!tag){
       return res.status(404).json({msg:'no tag with this id exsists in database'})
     }

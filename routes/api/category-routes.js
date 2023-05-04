@@ -9,7 +9,6 @@ router.get('/', async(req, res) => {
   try{
     const category= await Category.findAll({
         include:[Product]
- 
     });
     if(category.length===0){
         return res.status(404).json({msg:"no categories in database!"})

@@ -4,11 +4,12 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 
 // get all products
+//TODO:add in include for associated data
 router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   Product.findAll({
-    // include:[Product]
+    include:[Category,Tag]
   }).then(product =>{
     if(product.length===0){
       return res.status(404).json({msg:'no Products in the database'})
@@ -22,10 +23,11 @@ router.get('/', (req, res) => {
 });
 
 // get one product
+//TODO:add in include for associated data
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
-  Product.findByPk(req.params.id).then(product=>{
+  Product.findByPk(req.params.id,{include:[Category,Tag]}).then(product=>{
     if(!product){
       return res.status(404).json({msg:'no product with this id exsists in database'})
     }
