@@ -23,12 +23,12 @@ To run this application the user should first clone the repository. From there t
 ## Usage <a id = "Usage"></a>
 To see the data that is returned up each route the user should follow the following route guide 
 - GET "http://localhost:3001/api/categories/ " to get all the categories
-- GET "http://localhost:3001/api/categories/:id" to get category by id
+- GET "http://localhost:3001/api/categories/:id" to get category by id 
 - POST "http://localhost:3001/api/categories/" to create a category 
 - PUT "http://localhost:3001/api/categories/:id" to update entry at that id
 - DELETE "http://localhost:3001/api/categories/:id" to delete category at that id
 
-the same routes can be used for Products and Tags by swapping out "categories" in the above routes with "tags" or "products"
+the same routes can be used for Products and Tags by swapping out "categories" in the above routes with "tags" or "products". When running POST and PUT routes make sure to follow the same json structure that is returned for the objects in the GET routes
  
 Link to deployed github repo:  https://github.com/Ian-Danas/E-Commerce-BackEnd
 Link to video demo: 
