@@ -21,7 +21,7 @@ This product serves as a backend server that creates routes to get entries store
 To run this application the user should first clone the repository. From there they should install the dependencies by running "npm i" in the terminal. From there they should set up thier .env file which should include DB_NAME='enter database name' DB_USER='enter mysql user' DB_PASSWORD='enter mysql password'. From there they can run the schema.sql file in the db folder to setup the database. Lastly run the seeds by running 'npm run seed' in the command line to seed data in the database if they wish. Once all these steps have been followed running server through "node server.js" will start up the server.
 
 ## Usage <a id = "Usage"></a>
-To see the data that is returned up each route the user should follow the following route guide 
+To see the data that is returned up each route the user should follow the following route guide in insomnia or another route hitting software
 - GET "http://localhost:3001/api/categories/ " to get all the categories
 - GET "http://localhost:3001/api/categories/:id" to get category by id 
 - POST "http://localhost:3001/api/categories/" to create a category 
