@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
   // be sure to include its associated Product data
 });
-
+//TODO:add argument to include the associated products
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   Tag.findByPk(req.params.id).then(tag=>{

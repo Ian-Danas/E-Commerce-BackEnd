@@ -7,12 +7,33 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
+  Product.findAll({
+    // include:[Product]
+  }).then(product =>{
+    if(product.length===0){
+      return res.status(404).json({msg:'no Products in the database'})
+    }
+    res.json(product)
+  }).catch(err =>{
+    console.log(err)
+    res.status(500).json({msg:'error occured',err})
+  })
+
 });
 
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+  Product.findByPk(req.params.id).then(product=>{
+    if(!product){
+      return res.status(404).json({msg:'no product with this id exsists in database'})
+    }
+    res.json(product)
+  }).catch(err =>{
+    console.log(err)
+    res.status(500).json({msg:'error occured',err})
+  })
 });
 
 // create new product
@@ -91,6 +112,19 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where:{
+      id:req.params.id
+    }
+  }).then(product =>{
+    if(!product){
+      return res.status(404).json({msg:"no product with this id in database!"})
+    }
+    res.json(product)
+  }).catch(err =>{
+    console.log(err);
+    res.status(500).json({msg:"error occurred",err})
+  })
 });
 
 module.exports = router;
