@@ -31,7 +31,7 @@ To see the data that is returned up each route the user should follow the follow
 the same routes can be used for Products and Tags by swapping out "categories" in the above routes with "tags" or "products". When running POST and PUT routes make sure to follow the same json structure that is returned for the objects in the GET routes
  
 Link to deployed github repo:  https://github.com/Ian-Danas/E-Commerce-BackEnd
-Link to video demo: 
+Link to video demo: https://drive.google.com/file/d/1bKAd_mU1szS5_gKGKTCI4Yu2s33dt1Hy/view 
 ## Contributing <a id = "Contributing"></a>
 Ian Danas
 ## Tests <a id = "Tests"></a>
